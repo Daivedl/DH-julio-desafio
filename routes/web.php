@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::get('/inicio', function () {
     return view('layout');
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
