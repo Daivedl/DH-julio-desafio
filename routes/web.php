@@ -20,6 +20,7 @@ Route::get('/inicio', 'InicioController@inicio');
 
 Route::get('/detallePelicula/{id}','PeliculasController@detallePelicula');
 Route::get('/titulos','PeliculasController@todos');
+Route::get('/titulos/busquedaTitulos{search}', 'PeliculasController@search');
 
 Auth::routes();
 
