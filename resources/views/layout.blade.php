@@ -5,8 +5,8 @@
         <ul>
             @forelse($peliculas as $pelicula)
                 <li>
-
-                <a href="detallePelicula.php">{{$pelicula["title"]}}</a>
+                {{$pelicula["title"]}}
+                <a href="{{url('/detallePelicula/'.$pelicula->id)}}">| Ver detalles</a>
 
                 </li>
             @empty
@@ -20,8 +20,8 @@
         <ul>
             @forelse($peliculasUltimas as $peliculasUltima)
                 <li>
-
-                <a href="detallePelicula.php">{{$peliculasUltima["title"]}}</a>
+                {{$peliculasUltima["title"]}}
+                <a href="{{url('/detallePelicula/'.$peliculasUltima->id)}}">| Ver detalles</a>
 
                 </li>
             @empty

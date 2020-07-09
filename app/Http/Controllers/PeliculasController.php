@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Peliculas;
+use DB;
 
 class PeliculasController extends Controller
 {
@@ -12,8 +13,9 @@ class PeliculasController extends Controller
         $vac=compact("peliculas");
         return view("layout");
     }
-    public function detallePelicula(){
-
-        return view("detallePelicula");
+    public function detallePelicula($id){
+        $peliculas = Peliculas::find($id);
+        $vac = compact("peliculas");
+        return view("detallePelicula",$vac);
     }
 }

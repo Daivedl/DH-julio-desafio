@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 Route::get('/inicio', 'InicioController@inicio');
 
-Route::get('/detallePelicula{id}','PeliculasController@detallePelicula');
+Route::get('/detallePelicula/{id}','PeliculasController@detallePelicula');
 
 Auth::routes();
 
