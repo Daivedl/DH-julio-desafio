@@ -18,4 +18,9 @@ class PeliculasController extends Controller
         $vac = compact("peliculas");
         return view("detallePelicula",$vac);
     }
+    public function todos(){
+        $peliculas = Peliculas::paginate(5);
+        $vac=compact("peliculas");
+        return view("titulos",$vac);
+    }
 }
