@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-Route::get('/inicio', function () {
-    return view('layout');
-});
+Route::get('/inicio', 'InicioController@inicio');
+
+Route::get('/detallePelicula{id}','PeliculasController@detallePelicula');
 
 Auth::routes();
 
