@@ -23,21 +23,15 @@ class PeliculasController extends Controller
         $vac=compact("peliculas");
         return view("titulos",$vac);
     }
-    public function search($search){
+    /*public function search($search){
         $search = urldecode($search);
-        $peliculas = Peliculas::select()
-                ->where('title', 'LIKE', '%'.$search.'%')
-                ->orderBy('id', 'desc')
-                ->get();
+        $peliculas = Peliculas::where('title', 'LIKE', '%'.$search.'%')->get();
 
         if (count($peliculas) == 0){
-            return View('layout')
-            ->with('message', 'No hay resultados que mostrar')
-            ->with('search', $search);
+            return view('layout');
         } else{
-            return View('/titulos/busquedaTitulos')
-            ->with('peliculas',$peliculas)
-            ->with('search',$search);
+            return view('/titulos/busquedaTitulos',$search,$peliculas);
+
         }
-    }
+    } */
 }

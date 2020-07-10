@@ -40,11 +40,11 @@
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
           </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <form class="form-inline mt-2 mt-md-0"  role="search" aria-label="Search">
+            <input class="form-control mr-sm-2" type="text" name='search'id=texto placeholder="Buscar...">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
           </form>
-        </div>
+
       </nav>
     </header>
 

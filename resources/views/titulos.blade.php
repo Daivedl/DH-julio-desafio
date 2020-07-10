@@ -20,12 +20,22 @@
         {{$peliculas->links()}}
 
     </div>
-    <div class="col-4">
-    <h3>Buscar película por título</h3>
-    <form class="form-inline mt-2 mt-md-0" role="search" action="{{url('/titulos/busquedaTitulos')}}">
-            <input class="form-control mr-sm-2" type="text" name="search" placeholder="ej: Avatar" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
+    <div class="container mt-5">
+    <h3> Buscar película por título</h3>
+<!-- html agregado-->
+    <div class="col-3">
+        <div class="input-group">
+            <input type="text" class="form-control" id="texto" placeholder="Ingrese película">
+            <div class="input-group-append"><span class="input-group-text">Buscar</span></div>
+        </div>
+        <div id="resultados" class="bg-light border"></div>
     </div>
+<!-- fin del html agregado-->
+    <div class="col-8" id="contenedor">
+
+    </div>
+    <div id="cargando" hidden><h1>CARGANDO...</h1></div>
+    </div>
+
 </div>
 @include('footer')

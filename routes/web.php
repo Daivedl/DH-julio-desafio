@@ -20,8 +20,20 @@ Route::get('/inicio', 'InicioController@inicio');
 
 Route::get('/detallePelicula/{id}','PeliculasController@detallePelicula');
 Route::get('/titulos','PeliculasController@todos');
-Route::get('/titulos/busquedaTitulos{search}', 'PeliculasController@search');
+//Route::get('/titulos/busquedaTitulos{search}', 'PeliculasController@search');
+/*Route::get('inicio/searchredirect', function(){
 
+     Nuevo: si el argumento search está vacío regresar a la página anterior
+    if (empty('search')) return redirect()->back();
+
+    $search = urlencode(e('search'));
+    $route = "inicio/search/$search";
+    return redirect($route);
+});
+
+Route::get("inicio/search/{search}", "InicioController@search");
+*/
+Route::get('inicio/buscador','InicioController@buscador');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

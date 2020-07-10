@@ -19,4 +19,21 @@ class InicioController extends Controller
         return view("layout", $vac);
     }
 
+    /*public function search($search){
+        $search = urldecode($search);
+        $peliculas = Peliculas::where('title', 'LIKE', '%'.$search.'%')->get();
+
+        if (count($peliculas) == 0){
+            return view('layout');
+        } else{
+            return view('/titulos/busquedaTitulos',$search,$peliculas);
+
+        }
+    }
+    */
+    public function buscador(Request $request){
+        $peliculas    =   Peliculas::where('title','LIKE','%'.$request->texto."%")->get();
+        return view("busquedaTitulos",compact("peliculas"));
+    }
+
 }
