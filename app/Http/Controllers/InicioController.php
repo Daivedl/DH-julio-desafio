@@ -32,7 +32,7 @@ class InicioController extends Controller
     }
     */
     public function buscador(Request $request){
-        $peliculas    =   Peliculas::where('title','LIKE','%'.$request->texto."%")->get();
+        $peliculas = Peliculas::where('title','LIKE','%'.$request->search."%")->take(1)->get();
         return view("busquedaTitulos",compact("peliculas"));
     }
 

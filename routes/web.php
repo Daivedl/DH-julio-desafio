@@ -33,7 +33,7 @@ Route::get('/titulos','PeliculasController@todos');
 
 Route::get("inicio/search/{search}", "InicioController@search");
 */
-Route::get('inicio/busquedaTitulos','InicioController@buscador');
+Route::get('busquedaTitulos','InicioController@buscador');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
