@@ -1,5 +1,9 @@
 @include('header')
-Inicio - Despliegue de datos
+@if(Session::has('Mensaje')){{
+    Session::get('Mensaje')
+}}
+@endif
+<a href="{{url('abm/create')}}">Agregar Película</a>
 
 <table class="table table-light">
     <thead class="thead-light">
@@ -24,7 +28,13 @@ Inicio - Despliegue de datos
             <td>{{$pelicula->release_date}}</td>
             <td>{{$pelicula->length}}</td>
             <td>{{$pelicula->genre_id}}</td>
-            <td>Editar |
+            <td>
+
+            <a href="{{url('/abm/'.$pelicula->id.'/edit')}}">
+            Editar
+            </a>
+
+             |
 
             <form method="post" action="{{url('/abm/'.$pelicula->id)}}">
             {{csrf_field()}}

@@ -24,6 +24,8 @@ Crear Película
     <input type="text" name ="genre_id" id="genre_id" value="">
     <br/>
 
+    <a href="{{url('abm')}}">Regresar</a>
+
     <input type="submit" value="Agregar">
 </form>
 @include('footer')

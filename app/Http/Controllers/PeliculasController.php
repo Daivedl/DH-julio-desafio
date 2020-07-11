@@ -86,7 +86,7 @@ class PeliculasController extends Controller
     }
     */
     public function index(){
-        $datos['peliculas']=Peliculas::paginate(5);
+        $datos['peliculas']=Peliculas::paginate(30);
 
         return view('abm.index',$datos);
     }
@@ -94,15 +94,29 @@ class PeliculasController extends Controller
         return view('abm.create');
     }
     public function store(Request $requesst){
-            //$datosPeliculas = request()->all();
-            $datosPeliculas = request()->except('_token');
-            Peliculas::insert($datosPeliculas);
-            return response()->json($datosPeliculas);
+        //$datosPeliculas = request()->all();
+        $datosPeliculas = request()->except('_token');
+        Peliculas::insert($datosPeliculas);
+        return redirect('abm')->with('Mensaje','Película agregada con éxito');
+    }
+    public function destroy($id) {
+        Peliculas::destroy($id);
+        return redirect('abm')->with('Mensaje','Película eliminada con éxito');
+    }
+
+    public function edit($id){
+        $pelicula=Peliculas::findOrFail($id);
+        return view('abm.edit',compact('pelicula'));
+    }
+    public function update (Request $request,$id){
+        $datosPeliculas = request()->except(['_token','_method']);
+        Peliculas::where('id','=',$id)->update($datosPeliculas);
+
+        //$pelicula=Peliculas::findOrFail($id);
+        //return view('abm.edit',compact('pelicula'));
+        return redirect('abm')->with('Mensaje','Película modificada con éxito');
     }
     public function show(Peliculas $peliculas){
-            //
-    }
-    public function edit(Peliculas $peliculas){
         //
     }
 }
