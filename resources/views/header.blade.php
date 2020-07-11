@@ -37,7 +37,7 @@
               <a class="nav-link" href="{{url('titulos')}}">Titulos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link" href="{{url('/abm')}}">ABM</a>
             </li>
           </ul>
           <form method="GET" class="form-inline mt-2 mt-md-0"  role="search" aria-label="Search" action="{{url('busquedaTitulos')}}">

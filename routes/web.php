@@ -48,4 +48,4 @@ Route::get('/delete/{id}','PeliculasController@preguntar'); */
 /*Route::get('/abm','PeliculasController@index');
 Route::get('/abm/create','PeliculasController@create');*/
 
-Route::resource('abm','PeliculasController');
+Route::resource('abm','PeliculasController')->middleware('auth');

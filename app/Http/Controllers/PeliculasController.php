@@ -86,7 +86,7 @@ class PeliculasController extends Controller
     }
     */
     public function index(){
-        $datos['peliculas']=Peliculas::paginate(30);
+        $datos['peliculas']=Peliculas::paginate(5);
 
         return view('abm.index',$datos);
     }
@@ -122,6 +122,20 @@ class PeliculasController extends Controller
         return view('abm.edit',compact('pelicula'));
     }
     public function update (Request $request,$id){
+
+        $campos=[
+            'title' => 'required|string|max:100',
+            'rating' => 'required|string|max:100',
+            'awards'=> 'required|string|max:100',
+            'release_date'=> 'required|string|max:100',
+            'length'=> 'required|int|max:1000',
+            'genre_id'=> 'required|int|max:1000'
+        ];
+        $Mensaje=["required"=>'El :attribute es requerido'];
+        $this->validate($request,$campos,$Mensaje);
+
+
+
         $datosPeliculas = request()->except(['_token','_method']);
         Peliculas::where('id','=',$id)->update($datosPeliculas);
 

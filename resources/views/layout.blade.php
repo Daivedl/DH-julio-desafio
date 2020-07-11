@@ -1,4 +1,5 @@
 @include('header')
+
 <div class="row mt-3">
     <div class="col-8">
         <h1>Películas que pueden interesarte</h1>
