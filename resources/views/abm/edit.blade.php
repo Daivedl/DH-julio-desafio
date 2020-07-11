@@ -1,3 +1,7 @@
+@include('header')
+@extends('layouts.app')
+@section('content')
+<div class="container">
 Sección para editar película
 
 <form action="{{url('/abm/'.$pelicula->id)}}" method="post" enctype="multipar/form-data">
@@ -8,3 +12,6 @@ Sección para editar película
 
 
 </form>
+</div>
+@endsection
+@include('footer')

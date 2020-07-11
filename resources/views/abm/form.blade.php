@@ -1,28 +1,28 @@
 
 
-<label for="nombre">{{'title'}}</label>
+<label for="nombre">{{'Titulo'}}</label>
     <input type="text" name ="title" id="title"
     value="{{isset($pelicula->title)?$pelicula->title:''}}">
     <br/>
 
-    <label for="nombre">{{'rating'}}</label>
+    <label for="nombre">{{'Rating'}}</label>
     <input type="text" name ="rating" id="rating"
     value="{{isset($pelicula->rating)?$pelicula->rating:''}}">
     <br/>
-    <label for="nombre">{{'awards'}}</label>
+    <label for="nombre">{{'Premios'}}</label>
     <input type="text" name ="awards" id="awards"
     value="{{isset($pelicula->awards)?$pelicula->awards:''}}">
     <br/>
-    <label for="nombre">{{'release_date'}}</label>
+    <label for="nombre">{{'Fecha de estreno'}}</label>
     <input type="text" name ="release_date" id="release_date"
     value="{{isset($pelicula->release_date)?$pelicula->release_date:''}}">
 
     <br/>
-    <label for="nombre">{{'length'}}</label>
+    <label for="nombre">{{'Duración'}}</label>
     <input type="text" name ="length" id="length"
     value="{{isset($pelicula->length)?$pelicula->length:''}}">
     <br/>
-    <label for="nombre">{{'genre_id'}}</label>
+    <label for="nombre">{{'Id de género'}}</label>
     <input type="text" name ="genre_id" id="genre_id"
     value="{{isset($pelicula->genre_id)?$pelicula->genre_id:''}}">
     <br/>
