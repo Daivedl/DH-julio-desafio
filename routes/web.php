@@ -37,3 +37,15 @@ Route::get('busquedaTitulos','InicioController@buscador');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*Route::post('/create','PeliculasController@create');
+Route::get('/','PeliculasController@read');
+Route::post('/update/{id}','PeliculasController@update');
+Route::delete('/delete/{id}','PeliculasController@delete');
+Route::get('/update/{id}','PeliculasController@edit');
+Route::get('/delete/{id}','PeliculasController@preguntar'); */
+
+/*Route::get('/abm','PeliculasController@index');
+Route::get('/abm/create','PeliculasController@create');*/
+
+Route::resource('abm','PeliculasController');
