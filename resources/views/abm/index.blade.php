@@ -6,9 +6,10 @@
     Session::get('Mensaje')
 }}
 @endif
-<a href="{{url('abm/create')}}">Agregar Película</a>
-
-<table class="table table-light">
+<a href="{{url('abm/create')}}" class="btn btn-success" >Agregar Película</a>
+<br>
+<br>
+<table class="table table-light table-hover">
     <thead class="thead-light">
         <tr>
             <th>#</th>
@@ -33,16 +34,16 @@
             <td>{{$pelicula->genre_id}}</td>
             <td>
 
-            <a href="{{url('/abm/'.$pelicula->id.'/edit')}}">
+            <a class="btn btn-warning" href="{{url('/abm/'.$pelicula->id.'/edit')}}">
             Editar
             </a>
 
-             |
 
-            <form method="post" action="{{url('/abm/'.$pelicula->id)}}">
+
+            <form method="post" action="{{url('/abm/'.$pelicula->id)}}" style="display:inline">
             {{csrf_field()}}
             {{method_field('DELETE')}}
-            <button type="submit" onclick="return confirm('¿Borrar?');" >Borrar</button>
+            <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');" >Borrar</button>
 
             </form>
 
