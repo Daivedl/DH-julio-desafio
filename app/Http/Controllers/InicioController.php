@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Peliculas;
+use App\Genero;
+use App\Actor;
 class InicioController extends Controller
 {
     public function __construct()
