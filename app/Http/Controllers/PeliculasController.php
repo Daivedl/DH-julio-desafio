@@ -93,7 +93,20 @@ class PeliculasController extends Controller
     public function create(){
         return view('abm.create');
     }
-    public function store(Request $requesst){
+    public function store(Request $request){
+
+        $campos=[
+            'title' => 'required|string|max:100',
+            'rating' => 'required|string|max:100',
+            'awards'=> 'required|string|max:100',
+            'release_date'=> 'required|string|max:100',
+            'length'=> 'required|int|max:1000',
+            'genre_id'=> 'required|int|max:1000'
+        ];
+        $Mensaje=["required"=>'El :attribute es requerido'];
+        $this->validate($request,$campos,$Mensaje);
+
+
         //$datosPeliculas = request()->all();
         $datosPeliculas = request()->except('_token');
         Peliculas::insert($datosPeliculas);

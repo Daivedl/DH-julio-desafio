@@ -13,12 +13,12 @@
     <thead class="thead-light">
         <tr>
             <th>#</th>
-            <th>title</th>
+            <th>Título</th>
             <th>rating</th>
-            <th>awards</th>
-            <th>release_date</th>
-            <th>length</th>
-            <th>genre_id</th>
+            <th>Premios</th>
+            <th>Fecha de estreno</th>
+            <th>Duración</th>
+            <th>Id género</th>
             <th>Acciones</th>
         </tr>
     </thead>
