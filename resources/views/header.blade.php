@@ -41,6 +41,11 @@
                 <a class="nav-link" href="{{url('/abm')}}">ABM</a>
                 @endif
             </li>
+            <li class="nav-item">
+                @if(Auth::check() && Auth::user()->isRole("admin"))
+                <a class="nav-link" href="{{url('api/peliculas')}}">Api Películas</a>
+                @endif
+            </li>
           </ul>
           <form method="GET" class="form-inline mt-2 mt-md-0"  role="search" aria-label="Search" action="{{url('busquedaTitulos')}}">
             <input class="form-control mr-sm-2" type="text" name='search'id=texto placeholder="Buscar...">

@@ -146,4 +146,9 @@ class PeliculasController extends Controller
     public function show(Peliculas $peliculas){
         //
     }
+    public function listadoAPI(){
+        $peliculas = Peliculas::all();
+
+        return json_encode($peliculas);
+    }
 }
