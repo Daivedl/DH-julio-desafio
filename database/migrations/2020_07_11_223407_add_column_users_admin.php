@@ -15,7 +15,7 @@ class AddColumnUsersAdmin extends Migration
     {
         Schema::table('users',function (Blueprint $table){
 
-            $table->boolean('esAdmin');
+            $table->string('role');
         });
     }
 
@@ -28,7 +28,7 @@ class AddColumnUsersAdmin extends Migration
     {
         Schema::table('users',function (Blueprint $table){
 
-            $table->dropColumn('esAdmin');
+            $table->dropColumn('role');
         });
     }
 }
