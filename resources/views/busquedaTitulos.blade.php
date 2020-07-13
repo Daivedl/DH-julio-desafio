@@ -1,13 +1,13 @@
 @include('header')
 @if (count($peliculas))
     @foreach ($peliculas as $item)
-        <h2 class="p-2 border-bottom">{{$item->title}}</h2>
+        <h1 class="p-2 border-bottom">{{$item->title}}</h1>
         @if ($item->genero)
-        <p>Género: {{$item->genero->name}}</p>
+        <h5 class="mt-3 form-control">Género: {{$item->genero->name}}</h5>
         @endif
-        <p>Rating: {{$item->rating}}</p>
-        <p>Premios: {{$item->awards}}</p>
-        <p>Fecha de lanzamiento: {{$item->release_date}}</p>
+        <h5 class="mt-3 form-control">Rating: {{$item->rating}}</h5>
+        <h5 class="mt-3 form-control">Premios: {{$item->awards}}</h5>
+        <h5 class="mt-3 form-control">Fecha de lanzamiento: {{$item->release_date}}</h5>
 
     @endforeach
 @else

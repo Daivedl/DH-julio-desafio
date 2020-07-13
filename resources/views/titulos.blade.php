@@ -6,9 +6,9 @@
         <ul>
             @forelse ($peliculas as $pelicula)
                 <li>
-                    {{$pelicula->title}}
+                <h2 class="form-control mt-3 bg-primary text-light">{{$pelicula->title}}</h2>
                     @if ($pelicula->genero)
-                    <p>Género: {{$pelicula->genero->name}}</p>
+                    <p class="form-control mb-3 text-dark">Género: {{$pelicula->genero->name}}</p>
                     @endif
                 </li>
             @empty
@@ -18,9 +18,10 @@
         </ul>
 
         {{$peliculas->links()}}
-
+        <a class="btn btn-primary btn-sm" href="{{url('/inicio')}}">Volver</a>
     </div>
 
 
 </div>
+
 @include('footer')

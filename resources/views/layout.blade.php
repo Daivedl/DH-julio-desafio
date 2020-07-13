@@ -8,7 +8,7 @@
 
             @forelse($peliculas as $pelicula)
                 <li class="mb-4">
-                <h4 class="d-inline form-control">{{$pelicula["title"]}}</h4>
+                <h4 class="d-inline text-white bg-dark form-control">{{$pelicula["title"]}}</h4>
                 <div class="col-6 d-inline">
                 <a class="btn btn-primary btn-sm d-inline" href="{{url('/detallePelicula/'.$pelicula->id)}}">Ver detalles</a>
                 </div>
@@ -27,7 +27,7 @@
         <ul>
             @forelse($peliculasUltimas as $peliculasUltima)
                 <li class="mb-4">
-                <h6 class="d-inline form-control">{{$peliculasUltima["title"]}}</h6>
+                <h6 class="d-inline bg-secondary form-control text-white">{{$peliculasUltima["title"]}}</h6>
 
                 <div class="col-6 d-inline">
                 <a class="btn btn-primary btn-sm d-inline"href="{{url('/detallePelicula/'.$peliculasUltima->id)}}">Ver detalles</a>
