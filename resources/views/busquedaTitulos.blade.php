@@ -12,6 +12,7 @@
     @endforeach
 @else
 <h2>No se encontraron resultados</h2>
-<a href="inicio">Volver</a>
+
 @endif
+<a class="mt-3 btn btn-primary btn-sm" href="{{url('/inicio')}}">Volver</a>
 @include('footer')
